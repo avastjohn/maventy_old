@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}
+  - About
+{% endblock %}
+
+{% block content %}
+  <h1>Track Health of Children</h1>
+  
+  <h2 id="previewheader">Preview release</h2>
+  <p>
+    This is a <span id="previewtext">preview release</span>. That means
+    it is an early version, and we may change it radically. That
+    said, thanks for visiting. We will do our best to keep you happy!
+  </p>
+  <p>
+    Please <a href="{% url healthdb.views.contact %}">send us 
+    your feedback</a>.
+  </p>
+  <h2>Credits</h2>
+  <p>
+    We gratefully acknowledge <a href="http://wordpress.com">Automattic</a>, 
+    for providing a privacy 
+    policy and TOS under a Creative Commons license.
+  </p>
+  <p>
+    We gratefully acknowledge <a
+    href="http://www.blueshiftlab.com">Blue Shift Lab</a> for some source
+    code to use as a basis for this project.
+  </p>
+  <p>
+    We gratefully acknowledge <a
+    href="http://www.who.int/childgrowth/standards/technical_report/en/index.html">World
+    Health Organization</a> for Child Growth Standards and assistance
+    in using them.
+  </p>
+  
+{% endblock %}

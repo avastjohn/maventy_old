@@ -1,0 +1,99 @@
+// CSS for a mobile web browser with a tiny screen
+
+@import "partials/base";
+
+// blueprint imports
+// @import "blueprint/_typography.scss";
+
+// @include blueprint-typography;
+
+body.blueprint {
+ // background: $body_bgcolor url(/static/img/background.jpg?0010) repeat-x center top;
+  background: none;
+  width: 100%;
+}
+
+fieldset {
+  legend {
+    font-weight: bold;
+  }
+  ol {
+    width: 100%;
+    float: left;
+    padding: 0;
+    p {
+      label {
+        display: block;
+      }
+    }
+  }
+}
+
+#header {
+  background-color: $mob_header_bgcolor;
+  #homelink {
+    color: $header_font_color;
+    font-size: 130%;
+    float:left;
+  }
+  #previewlink {
+    font-size: 85%;
+    clear:both;
+  }
+}
+
+#subheader {
+  margin: 0;
+  font-size: 85%;
+}
+
+// menu in the header
+.menu_nav {
+  ul {
+    list-style: none;
+//    float: left;
+    margin: none;
+    padding: none;
+    li {
+      float: left;
+      background-color:#1f1f1f;
+      width:100%;
+      float:left;
+      font-size:100%;
+      a {
+        color: #78bbe6;
+      }
+      a:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+// Make jquery date widget smaller.
+// See http://stackoverflow.com/questions/659588/how-to-resize-the-jquery-datepicker-control/660256#660256
+div.ui-datepicker {
+ font-size: 10px;
+}
+
+.highlight-column .highlightbox {
+  width: 100%;
+  height: auto;
+  padding: 5px; 
+  margin: 10px 0 0 5px;
+  a {
+    font-size: 90%; }}
+
+.highlightbox#yellow {
+  border-style: solid;
+  // rounded corners
+  -moz-border-radius: 10px;
+  border-radius: 10px; }
+  
+.donate-column {
+  margin: 10px;	
+  font-size: 85%;
+  a img {  
+    height: 80px;
+    width: 80px; }}  
+  

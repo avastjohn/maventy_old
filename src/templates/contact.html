@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}
+  - Contact Us
+{% endblock %}
+
+{% block content %}
+  Let us know what's on your mind.
+  <br>
+
+  <form action="{%url healthdb.views.contact %}"
+        method="post" id="new-contact">
+
+    <fieldset>
+      <legend>Contact Us</legend>
+      <ol>
+        <li>
+          {{ contactform.contacter.errors }}
+          {{ contactform.contacter.label_tag }}
+          {{ contactform.contacter.as_widget }}
+        </li>
+        <li>
+          {{ contactform.contact_text.errors }}
+          {{ contactform.contact_text.label_tag }}
+          {{ contactform.contact_text.as_widget }}
+        </li>
+      </ol>
+    </fieldset>
+
+    <input type="submit" value="Submit" />
+  </form>
+
+{% endblock %}

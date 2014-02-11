@@ -1,0 +1,40 @@
+{% load i18n %}
+
+<div class="menu_nav">
+    <ul>
+        <li><a id="calcpage" href="/">{% trans "Home" %}</a></li>
+        <li><a id="calcaboutpage" href="{% url about %}">{% trans "About" %}</a></li>
+        <li><a id="contactuspage" href="{% url healthdb.views.contact %}"
+          >{% trans "Contact Us" %}</a></li>
+        {% comment %}
+        <li><a href="mobileversion.html">Mobile Version</a></li>
+        {% endcomment %}
+    </ul>
+
+    <form action="/i18n/setlang/" method="post">
+      {% trans "Choose language" %}
+      {% for lang in LANGUAGES %}
+        {% ifnotequal request.LANGUAGE_CODE lang.0 %}
+          <button type="submit" name="language" value="{{ lang.0 }}">{{ lang.1 }}</button>
+        {% endifnotequal %}
+      {% endfor %}
+    </form>
+
+    <div id="signin">
+      {% if user.is_authenticated %}
+        <a href="{% url django.contrib.auth.views.logout %}">{% trans "Sign out" %}</a>
+      {% else %}
+        <a href="{% url registration_register %}">{% trans "Register" %}</a>
+        |
+        <a href="{% url django.contrib.auth.views.login %}?next={{request.path_info}}"
+          >{% trans "Sign in" %}</a>
+      {% endif %}        
+    </div>
+</div>   
+
+<div id="header" class="span-24 last">
+   <a id="homelink" href="/">Global Child Health Database</a>
+   <a id="previewlink" href="{% url about %}">preview release</a>
+   <div id="subheader">LA BASE DE DONNÉES MONDIALE SUR LA SANTÉ DE L'ENFANT</div>
+   <div id="subheader">全球儿童健康资料库</div>
+</div>

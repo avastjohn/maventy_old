@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-10-01 12:24+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\forms.py:6
+msgid "Find"
+msgstr "Suchen nach"
+
+#: .\views.py:11
+msgid "No results found"
+msgstr "Keine Ergebnisse gefunden"
+
+#: .\views.py:12
+msgid "One result found"
+msgstr "Ein Ergebnis gefunden"
+
+#: .\views.py:13
+#, python-format
+msgid "%(hits)s results found"
+msgstr "%(hits)s Ergebnisse gefunden"
+
+#: .\views.py:14
+#, python-format
+msgid "More than %(hits)s results found"
+msgstr "Mehr als %(hits)s Ergebnisse gefunden"
+
+#: .\templates\form.html.py:13
+msgid "Search"
+msgstr "Suchen"
+
+#: .\templates\pagenav.html.py:21
+#, python-format
+msgid "Page %(page)s of %(pages)s"
+msgstr "Seite %(page)s von %(pages)s"
+
+#: .\templates\search.html.py:18
+#, python-format
+msgid "%(resultstring)s for \"%(query)s\""
+msgstr "%(resultstring)s für \"%(query)s\""
+
+#: .\templates\search.html.py:18
+msgid "Previous"
+msgstr "Zurück"
+
+#: .\templates\search.html.py:18
+msgid "Next"
+msgstr "Vorwärts"

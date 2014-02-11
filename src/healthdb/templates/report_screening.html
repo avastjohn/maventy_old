@@ -1,0 +1,41 @@
+
+{% load i18n %}
+{% load healthdb_tags %}
+
+  {% if reportData %}
+    <table>
+      {% for item in reportData %}
+        <tr>
+          <td><center><strong>Screening Report</strong></center></td>
+        </tr>
+        {% if residence %}
+          <tr>
+            <td>Residence (Village): {{residence}}</td>
+          </tr>
+        {% endif %}
+        <tr>
+          <td># of visits: <strong>{{item.visitcount}}</strong> (<strong>{{item.patientcount}}</strong> children)</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+  
+  {% if showDetail %}
+    <table>
+      <tr>
+        <td colspan=3><center><strong>Patients Screened</strong></center></td>
+      </tr>
+      <tr>
+        <td><strong>Patient</strong></td>
+        <td><strong>Sex</strong></td>
+        <td><strong>Visit Date</strong></td>
+      </tr>
+      {% for detail in reportDetail %}
+        <tr>
+          <td>{{detail.patient.name}}</td>
+          <td>{{detail.patient.sex}}</td>
+          <td>{{detail.visit.visit_date|date}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% endif %}

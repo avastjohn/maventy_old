@@ -1,0 +1,26 @@
+body.blueprint { background: none; width: 100%; }
+
+fieldset legend { font-weight: bold; }
+fieldset ol { width: 100%; float: left; padding: 0; }
+fieldset ol p label { display: block; }
+
+#header { background-color: #62a2c5; }
+#header #homelink { color: white; font-size: 130%; float: left; }
+#header #previewlink { font-size: 85%; clear: both; }
+
+#subheader { margin: 0; font-size: 85%; }
+
+.menu_nav ul { list-style: none; margin: none; padding: none; }
+.menu_nav ul li { float: left; background-color: #1f1f1f; width: 100%; float: left; font-size: 100%; }
+.menu_nav ul li a { color: #78bbe6; }
+.menu_nav ul li a:hover { color: white; }
+
+div.ui-datepicker { font-size: 10px; }
+
+.highlight-column .highlightbox { width: 100%; height: auto; padding: 5px; margin: 10px 0 0 5px; }
+.highlight-column .highlightbox a { font-size: 90%; }
+
+.highlightbox#yellow { border-style: solid; -moz-border-radius: 10px; border-radius: 10px; }
+
+.donate-column { margin: 10px; font-size: 85%; }
+.donate-column a img { height: 80px; width: 80px; }

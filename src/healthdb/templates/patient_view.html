@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load healthdb_tags %}
+
+{% block subtitle %}
+  - Patient Information
+{% endblock %}
+
+{% block content %}
+  {% if patient %}
+  
+    <fieldset id="patient-info">
+      <legend>{% trans "Patient Information" %}</legend>
+      {% show_patient_info patient %}
+    </fieldset>
+
+    <br/>
+
+    {% if user.is_authenticated %}
+      <table>
+        <tr>
+          <td width=20%>
+            <form action="{{patient.get_edit_url}}"
+             method="get" id="patient-edit">
+             <input class="submit" id="formsubmit" type="submit"
+             value="{% trans "Edit Patient Information" %}">
+            </form>
+          </td>
+          <td width=80%>
+            {% if user.is_staff %}
+              <form action="{% url healthdb.views.patient_delete orgStr patient.short_string %}" method="POST" id="patient-delete">
+               <input class="submit" id="patientdelete" type="submit" value = "{% trans "Delete Patient and Visits" %}">
+              </form>
+            {% endif %}
+          </td>
+        </tr>
+      </table>
+    {% endif %}
+    <br/>
+
+    <fieldset id="patient-visits">
+      <legend>{% trans "Visits" %}</legend>
+      {% if patient.has_visits %}
+        <ol>
+          {% for visit in patient.get_visits %}
+            <li>
+
+              {% show_visit_info visit %}
+
+              {% if user.is_authenticated %}
+                <br/>
+                <a href="{%url healthdb.views.visit_edit orgStr, patient.short_string, visit.short_string %}"
+                >{% blocktrans with visit.short_string as visitStr %}Edit visit {{visitStr}}{% endblocktrans %}</a>
+                          
+                {% if user.is_staff %} 
+                  <a href="{% url healthdb.views.visit_delete orgStr patient.short_string visit.short_string %}" 
+                  >{% blocktrans with visit.short_string as visitStr %}Delete visit {{visitStr}}{% endblocktrans %}</a>
+                  <br/>
+                {% endif %}
+                  
+              {% endif %}
+              
+            </li>
+          {% endfor %}
+        </ol>
+      {% else %}
+      {% trans "No visits yet." %}<br/>
+      {% endif %}
+    </fieldset>
+  
+    <br/>
+
+    {% if user.is_authenticated %}
+      <form action="{% url healthdb.views.visit_new orgStr patient.short_string %}"
+        method="get" id="patient-new-visit">
+        <input class="submit" id="formsubmit" type="submit"
+        value="{% trans "Add new visit" %}">
+      </form>  
+    {% else %}
+      <form action="{% url healthdb.views.patient_new_with_visit orgStr %}"
+        method="get" id="patient-new-visit">
+        <input class="submit" id="formsubmit" type="submit"
+        value="{% trans "Add new patient with a visit" %}">
+      </form>
+    {% endif %}
+
+  {% else %}
+    <p>{% trans "No such patient." %}</p>
+  {% endif %}
+  <br>or <a href="{% url healthdb.views.database_index %}">Search Database</a>
+  <br>or <a href="{% url healthdb.views.patient_new_with_visit orgStr %}">{% trans "Add new patient with a visit" %}</a>
+{% endblock %}

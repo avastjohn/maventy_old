@@ -1,0 +1,24 @@
+Compass CSS (http://wiki.github.com/chriseppstein/compass)
+Depends on SASS (http://sass-lang.com)
+
+To install required software for development:
+  * install Ruby
+  * install RubyGems: sudo apt-get install rubygems
+    + on Ubuntu (if gems are not added to path): edit .bashrc to include:
+      export PATH=/var/lib/gems/1.8/bin:$PATH
+  * install SASS:
+    * sudo gem install haml
+  * install Compass:
+    * gem sources --add http://gems.github.com/
+    * sudo gem install chriseppstein-compass
+
+To modify css files:
+  * run "compass -w" from this directory
+  * edit src .sass files, they will be auto-compiled/copied
+    when you save changes.
+
+Default location of .sass libraries:
+  * /var/lib/gems/1.8/gems/compass-0.10.2
+
+Syntax coloring for Aptana (and eclipse?)
+  * http://stackoverflow.com/questions/1474096/using-haml-sass-with-eclipse

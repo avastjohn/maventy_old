@@ -1,0 +1,26 @@
+{% load i18n %}
+{% load healthdb_tags %}
+
+<table>
+  <thead>
+    <th></th>
+    <th>{% trans "Measured" %}</th>
+    <th>{% trans "Percentile" %}</th>
+    <th>{% trans "Z-score" %}</th>
+  </thead>
+  <tbody>
+    {% if visit %}
+      {% show_visit_stat_row "Weight (kg)" visit.weight visit_stats.weight_for_age %}
+      {% show_visit_stat_row "Length or height (cm)" visit.height visit_stats.length_or_height_for_age %}
+      {% show_visit_stat_row "Head circumference (cm)" visit.head_circumference visit_stats.head_circumference_for_age %}
+      {% show_visit_stat_row "Body mass index (BMI)" visit_stats.body_mass_index visit_stats.body_mass_index_for_age %}
+      {% show_visit_stat_row "Weight for height" "" visit_stats.weight_for_length_or_height %}
+    {% else %}
+      <tr><td class="label">{% trans "Weight (kg)" %}</td></tr>
+      <tr><td class="label">{% trans "Length or height (cm)" %}</td></tr>
+      <tr><td class="label">{% trans "Head circumference (cm)" %}</td></tr>
+      <tr><td class="label">{% trans "Body mass index (BMI)" %}</td></tr>
+      <tr><td class="label">{% trans "Weight for height" %}</td></tr>
+    {% endif %}
+  </tbody>
+</table>

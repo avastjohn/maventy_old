@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Login" %}{% endblock %}
+
+{% block content %}
+<h1>Login</h1>
+
+<div>{% trans "Don't have an account?" %}
+  <a href="{% url registration_register %}">{% trans "Register" %}</a>.</div>
+<div>{% trans "Forgot your password?" %}
+  <a href="{% url auth_password_reset %}">{% trans "Reset it" %}</a>.</div>
+
+<form action="{{ request.get_full_path }}" method="post">
+  <table>{{ form }}</table>
+  <input type="submit" value="{% trans "Login" %}" />
+</form>
+
+{% endblock content %}

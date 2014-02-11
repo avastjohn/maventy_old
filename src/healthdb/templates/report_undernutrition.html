@@ -1,0 +1,65 @@
+{% load i18n %}
+{% load healthdb_tags %}
+{% load report_tags %}
+
+  {% if reportData %}
+    <table>
+      {% for item in reportData %}
+        <tr>
+          <td><center><strong>Undernutrition Report (period: {{report.visit_date_from|date}}-{{report.visit_date_to|date}})</strong></center></td>
+        </tr>
+        {% if residence %}
+          <tr>
+            <td>Residence (Village): {{residence}}</td>
+          </tr>
+        {% endif %}
+        <tr>
+          <td>An undernutrition report counts all children who have:</td>
+        </tr>
+        <tr>
+          <td> * z-score of length-or-height-for-age < -2 (stunted)</td>
+        </tr>
+        <tr>
+          <td> * z-score of weight-for-age < -2 (underweight)</td>
+        </tr>
+        <tr>
+          <td> * z-score of weight-for-length-or-height < -2 (wasting)</td>
+        </tr>
+        <tr>
+          <td>&nbsp</td>
+        </tr>
+        <tr>
+          <td><center><strong>Summary Results</strong></center></td>
+        </tr>
+        <tr>
+          <td># of visits: <strong>{{item.visitcount}}</strong> (<strong>{{item.patientcount}}</strong> children)</td>
+        </tr>
+        <tr>
+          <td># of stunted children: <strong>{{item.stunted}}</strong> - &nbsp&nbsp % of total: <strong>{{item.percentagestunted|floatformat:1}}%</strong></td>
+        </tr>
+        <tr>
+          <td># of underweight children: <strong>{{item.underweight}}</strong> - &nbsp&nbsp % of total: <strong>{{item.percentageunderweight|floatformat:1}}%</strong></td>
+        </tr>
+        <tr>
+          <td># of children with wasting: <strong>{{item.wasting}}</strong> - &nbsp&nbsp % of total: <strong>{{item.percentagewasting|floatformat:1}}%</strong></td>        
+        </tr>
+        <tr>
+          <td>Total number of undernourished: <strong>{{item.totalundernourished}}</strong> children - &nbsp&nbsp % of total: <strong>{{item.percentundernourished|floatformat:1}}%</strong></td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+  
+  {% if showDetail %}
+    {% if reportStunted %}
+      {% show_undernutrition_detail reportStunted 'Stunted' %}
+    {% endif %}
+    
+    {% if reportUnderweight %}
+      {% show_undernutrition_detail reportUnderweight 'Underweight' %}
+    {% endif %}
+    
+   {% if reportWasting %} 
+      {% show_undernutrition_detail reportWasting 'Wasting' %}
+    {% endif %}
+  {% endif %}

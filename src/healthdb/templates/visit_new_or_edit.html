@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+
+  <form action="{% block formaction %}{% endblock %}"
+        method="post" id="{% block formid %}{% endblock %}">
+    <fieldset>
+      <legend>{% trans "Visit Information" %} {% if visit.visit_number%}(#{{visit.visit_number}}){% endif %}
+        </legend>
+      <ol>
+         {{ form.as_p }}
+      </ol>
+    </fieldset>
+    
+    <fieldset class="submit">
+      <input class="submit" id="formsubmit" type="submit" value="{% trans "Submit" %}">
+    </fieldset>
+    
+  </form>
+  
+  {% block more_javascript %}
+  {% endblock %}
+{% endblock %}

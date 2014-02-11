@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block subtitle %}
+  - {% trans "Add a new patient and visit" %}
+{% endblock %}
+
+{% block content %}
+
+  <form action="{% url healthdb.views.patient_new_with_visit orgStr %}"
+        method="post" id="patient-visit-add">
+        
+    {% if patient_exists %}
+	  <fieldset>
+	    <legend>{% trans "Resolve duplicate patient" %}</legend>
+	    <ol>
+        <p>{% trans "We found a patient with the same name and date of birth." %}</p>
+	  	  {{ confirmationform.as_p }}
+	    </ol>
+	  </fieldset>    	   
+      <fieldset class="submit">
+        <input class="submit" id="formsubmit" type="submit" value="{% trans "Submit" %}">
+      </fieldset>    
+    {% endif %}
+               
+    <fieldset>
+      <legend>{% trans "Patient Information" %}</legend>
+      <ol>
+         {{ patientform.as_p }}
+      </ol>
+    </fieldset>
+
+    <fieldset>
+      <legend>{% trans "Visit Information" %}</legend>
+      <ol>
+         {{ visitform.as_p }}
+      </ol>
+    </fieldset>
+
+    {% if not patient_exists %}
+      <fieldset class="submit">
+         <input class="submit" id="formsubmit" type="submit" value="{% trans "Submit" %}">
+       </fieldset>    
+    {% endif %}
+    
+  </form>
+
+{% endblock %}

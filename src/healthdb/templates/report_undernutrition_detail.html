@@ -1,0 +1,23 @@
+{% load i18n %}
+{% load healthdb_tags %}
+     <table>
+       <tr>
+         <td colspan=5><center><strong>{{detailName}} Patients Detail</strong></center></td>
+       </tr>
+       <tr>
+         <td><strong>Patient</strong></td>
+         <td><strong>Gender</strong></td>
+         <td><strong>Age</strong></td>
+         <td><strong>Visit</strong></td>
+         <td><strong>{{detailName}} Zscore</strong></td>
+       </tr>
+       {% for detail in reportUndernutrition %}
+         <tr>
+           <td>{{detail.patient.name}}</td>
+           <td>{{detail.patient.sex}}</td>
+           <td>{% show_years_months_days detail.visit.get_visit_statistics.age_in_days %}</td>
+           <td>{{detail.visit.visit_date|date}}</td>
+           <td>{{detail.visit.get_visit_statistics.weight_for_age.zscore|floatformat:2}}</td>
+         </tr>
+       {% endfor %}
+     </table>

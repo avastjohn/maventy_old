@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load healthdb_tags %}
+
+{% block content %}
+  {% if user.is_authenticated %}  
+
+    <p style="text-align: right;"><strong>Set Default Country:</strong>
+    			<br>{% include 'country_selector.html' %}</p>
+    
+    <h2>Search for patients</h2>
+    <div align="left">
+      <form action="{% url healthdb.views.patients_search orgStr %}"
+            method="get"
+            class="search-form{% if not hits or not query %} focus-form{% endif %}{% if search_form_class %} {{ search_form_class }}{% endif %}">
+        {% include 'healthdb/patient_search_form.html' %}
+      </form>
+
+      or <a href="{% url healthdb.views.patients_search orgStr %}">browse</a>
+      <p>or <a href="{% url healthdb.views.patient_new_with_visit orgStr %}">{% trans "Add new patient with a visit" %}</a></p>
+      <br>   
+      {% with "criteria" as reportType %}
+	    <a href="{% url healthdb.views.reports_view orgStr reportType %}">Reports</a> 
+	  {% endwith %}
+    </div>
+
+    {% if user.is_staff %}
+      {# NOTE(dan): This needs to be per-org before normal users can see it #}
+      <div class="spacer"></div>
+      <div class="highlightbox_yellow"><p>STAFF ONLY</p>
+        <div>
+        There are {{patient_count}} patient records and {{visit_count}} visit records.
+        </div>
+
+    {% comment %}
+        This functionality doesn't work for now
+        <div>
+        <a href="/download-visits">Download all visits as CSV file</a> (for Excel).
+        </div>
+    {% endcomment %}
+      </div>
+    {% endif %}
+
+    <br/>
+    
+  {% else %}
+    <p>{% trans "You must log in to view health information." %}</p>
+  {% endif %}
+
+{% endblock %}

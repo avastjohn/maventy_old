@@ -1,0 +1,21 @@
+{% load i18n %}
+
+<div class="vaccination-dates">
+  {% if vaccinations.dates %}
+    {% for vdate in vaccinations.dates %}
+      {% if vdate %}
+        <div>
+          {% blocktrans with forloop.counter as ctr %}Dose {{ ctr }}{% endblocktrans %}:
+          {{ vdate|date }}
+        </div>
+      {% else %}
+        {% comment %} NOTE(dan): This doesn't work if they've only filled in dose #3.  Oh well. {% endcomment %}
+        {% if forloop.first %}
+          {% trans "No doses" %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    {% trans "No doses" %}
+  {% endif %}
+</div>

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load i18n searchtags %}
+{% block title %}{% if query %}{{ query }} - {% endif %}{{ search_title }}{% endblock %}
+
+{% block content %}
+{% block search-form %}
+  {% if search_form %}
+    {% if query or hits or show_key_pagenav %}
+      <form action="{{ request.path }}" method="get" class="search-form{% if not hits or not query %} focus-form{% endif %}{% if search_form_class %} {{ search_form_class }}{% endif %}">
+        {% include 'search/form.html' %}
+      </form>
+    {% endif %}
+  {% endif %}
+{% endblock %}
+
+{% if query or hits or force_results_count %}
+  <div class="results-count">
+    {% block results-count %}
+      {% with hits|resultsformat:results_count_format as resultstring %}
+        {% if query %}
+          {% blocktrans %}{{ resultstring }} for "{{ query }}"{% endblocktrans %}{% else %}
+          {{ resultstring }}{% endif %}{% if hits %}:{% else %}.{% endif %}
+      {% endwith %}
+    {% endblock %}
+  </div>
+{% endif %}
+
+{% load_object_list %}
+{% if search__object_list %}
+  {% block object-list-container %}
+      {% block object-list %}
+        {% for object in search__object_list %}
+          {% display_in_list object %}
+        {% endfor %}
+      {% endblock %}
+  {% endblock %}
+{% endif %}
+
+{% block pagenav %}{% if hits %}{% pagenav %}{% else %}{% if show_key_pagenav %}{% include 'search/pagenav.html' %}{% endif %}{% endif %}{% endblock %}
+
+{% block searchbottomblock %}{% endblock %}
+{% endblock %}

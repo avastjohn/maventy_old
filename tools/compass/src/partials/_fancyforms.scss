@@ -1,0 +1,59 @@
+// Mixin for fancy forms
+// http://www.sitepoint.com/article/fancy-form-design-css
+//
+// Relies on the following html structure:
+//
+//  fieldset
+//    legend
+//    ol
+//      li
+//        label
+//        input
+//  fieldset.submit
+//    input
+
+$legend_text_color: black !default;
+$muted_border_color: #333333 !default;
+$form_bgcolor: #555555 !default;
+
+@mixin attach_fancy_form {
+  float: left;
+  clear: both;
+  width: 95%;
+  margin: 0 0 1.5em 0;
+  padding: 0;
+  border: $muted_border;
+  background-color: $form_bgcolor;
+  background-repeat: repeat-x;
+  ol {
+    padding: 1em 1em 0 1em;
+    list-style: none; }
+  li {
+    float: left;
+    clear: left;
+    width: 100%;
+    padding-bottom: 1em; }
+  &.submit {
+    float: none;
+    width: auto;
+    border-style: none;
+    padding-left: 12em;
+    background-color: transparent; }
+  legend {
+    margin-left: 1em;
+    padding: 0;
+    color: $legend_text_color;
+    font-weight: bold;
+    font-size: 1.5em; }
+  label {
+    display: block;
+    //float: left
+    //width: 10em
+    //margin-right: 1em
+  }
+  // errorlist: A class added by Django to field errors
+  .errorlist {
+    list-style-type: none;
+    display: inline;
+    li {
+      display: inline; } } }

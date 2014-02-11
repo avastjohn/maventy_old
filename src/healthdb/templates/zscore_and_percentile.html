@@ -1,0 +1,15 @@
+{% load healthdb_tags %}
+
+<td class="value-col">
+  {% show_percentile zandp %}
+</td>
+
+<td class="value-col">
+  {% show_zscore zandp %}
+</td>
+
+<td class="value-col">
+  {% if zandp.is_alertworthy %}
+      <span class="errorlist">ALERT!</span>
+  {% endif %}
+</td>

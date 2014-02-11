@@ -1,0 +1,5 @@
+2010-12-06: The "django" subdirectory is django-1.0.2.
+It used to be django-1.0.2.zip, but unzipping allows it to be precompiled
+as well as stepped through and/or modified in a debugger.
+
+--Dan

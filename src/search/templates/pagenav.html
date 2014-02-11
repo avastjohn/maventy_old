@@ -1,0 +1,35 @@
+{% load i18n %}{% spaceless %}
+<p class="pagenav">
+  {% if has_previous %}
+    <a href="{{ base_url }}{{ previous }}" class="page-nav">{% trans 'Previous' %}</a>
+  {% else %}
+    <span class="page-nav">{% trans 'Previous' %}</span>
+  {% endif %}
+
+  {% if show_first %}
+    <a href="{{ base_url }}1" class="page-nav">1</a>
+    ...
+  {% endif %}
+
+  {% for pagenum in page_range %}
+    {% ifequal pagenum page %}
+      <span class="page-nav-current">{{ pagenum }}</span>
+    {% else %}
+      <a href="{{ base_url }}{{ pagenum }}" class="page-nav">
+        {{ pagenum }}
+      </a>
+    {% endifequal %}
+  {% endfor %}
+
+  {% if show_last %}
+    ...
+    <a href="{{ base_url }}{{ pages }}" class="page-nav">{{ pages }}</a>
+  {% endif %}
+  
+  {% if has_next %}
+    <a href="{{ base_url }}{{ next }}" class="page-nav">{% trans 'Next' %}</a>
+  {% else %}
+    <span class="page-nav">{% trans 'Next' %}</span>
+  {% endif %}
+</p>
+{% endspaceless %}

@@ -1,0 +1,56 @@
+// Here is where you can define your constants for your application and
+// configure the blueprint framework.
+
+// background colors
+$header_bgcolor: transparent;
+$top_bgcolor: white;
+$body_bgcolor: white;
+$footer_bgcolor: #1f1f1f;
+$site_bgcolor: #E6E6E6;
+$form_bgcolor: #eff6fe;
+$offset_row_bgcolor: #eff6fe;
+$notice_bgcolor: #e1edfa;
+$highlight_bgcolor: #e1edfa;
+$highlight_yellow: #f8bb51;
+$highlight_blue: #94c0dc;
+
+// border colors
+$header_border: none;
+$strong_border_color: green;
+$strong_border: unquote("1px solid #{$strong_border_color}");
+$muted_border_color: #bfbab0;
+$muted_border: unquote("1px solid #{$muted_border_color}");
+$highlight_border_color: #accff6;
+$highlight_border: unquote("3px solid #{$highlight_border_color}");
+$highlight_yellow_border_color: #f3e4a5;
+$highlight_yellow_border: unquote("2px solid #{$highlight_yellow_border_color}");
+$highlight_blue_border_color: #b0d9f3;
+$highlight_blue_border: unquote("2px solid #{$highlight_blue_border_color}");
+
+// font colors
+$header_font_color: white;
+$footer_font_color: #959595;
+$footer_link_color: white;
+$headings_font_color: #2c5264;
+$input_help_font_color: #a1a1a1;
+$error_color: #ec0e0e;
+$highlight_link_color: green;
+$preview_link_color: #ec0e0e;
+$emphasis_font_color: black;
+$muted_font_color: gray;
+
+// shapes and sizes
+$footer_height: 120px;
+$input_width: 500px;
+$textarea_height: 80px;
+
+// blueprint settings
+// blueprint settings must come before blueprint imports
+$blueprint_font_family: unquote("Helvetica Neue, Arial, Helvetica, sans-serif");
+$blueprint_fixed_font_family: unquote("'andale mono', 'lucida console', monospace");
+$blueprint_font_size: 14px;
+$blueprint_table_header_color: transparent;
+$blueprint_table_stripe_color: $body_bgcolor;
+
+// mobile colors
+$mob_header_bgcolor: #62a2c5;

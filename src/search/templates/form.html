@@ -1,0 +1,10 @@
+{% load i18n %}
+
+{% for field in search_form %}
+  <div class="search-form">
+    {{ field.label_tag }}: {{ field }}
+    {% if forloop.first %}
+      <input type="submit" value="{% trans 'Search' %}" />
+    {% endif %}
+  </div>
+{% endfor %}

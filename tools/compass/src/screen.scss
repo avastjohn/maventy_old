@@ -1,0 +1,124 @@
+// CSS for a desktop-based web browser with a big screen
+
+@import "partials/base";
+
+// container width = cols * (width + margin)
+// 768 px
+$blueprint_grid_columns: 24;
+$blueprint_grid_width: 24px;
+$blueprint_grid_margin: 8px;
+
+// blueprint imports
+@import "blueprint/_typography.scss";
+@import "blueprint/_grid.scss";
+
+// local imports
+@import "partials/_fancyforms.scss";
+@import "partials/_stickyfooter.scss";
+
+@include blueprint-typography;
+
+html {
+  @include attach_footer($footer_height);
+}
+
+body.blueprint {
+  background: $site_bgcolor url(/static/img/background.jpg) no-repeat top center;
+  .container {
+    @include container;
+  }
+}
+
+fieldset {
+  @include attach_fancy_form;
+}
+
+#header {
+  border-top: $header_border;
+  background-color: $header_bgcolor;
+  color: $header_font_color;
+  font-size: 87.5%;
+  font-weight: bold;
+  padding-top: 6px;
+  padding-bottom: 18px;
+  a {
+    color: $header_font_color;
+  }
+  #homelink {
+    float: left;
+    font-size: 230%;
+    text-decoration: none;
+    margin-left: 20%; }
+  #navlinks {
+    float: left; }
+  #signin {
+    float: right;
+    }
+}
+
+#main {
+  @include column(23, true); 
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 15px;
+  background-color:$body_bgcolor; 
+}  
+ 
+#footer {
+  @include column(24, true);
+  padding-left: 30px; 
+}
+ 
+#column16 {
+  @include column(16); }
+
+#column8last {
+  @include column(8, true); }
+
+#column12 {
+  @include column(12); }
+
+#column12last {
+  @include column(12, true); }
+
+// menu in the header
+.menu_nav {
+  padding: 20px 10px 35px 0;
+  ul {
+    list-style: none;
+    float: left;
+    li {
+      float: left;
+      a {
+        padding: 8px 20px;
+        color: #dddddd;
+        text-decoration: none;
+        font-weight: bold; }
+      a:hover {
+        color: #78bbe6; } } } }
+
+// home page is a 3-column format
+.logo-column {
+  @include column(4); }
+
+.highlight-column {
+  @include column(7); }
+
+.description-column {
+  @include column(14, true); 
+  margin-left: 5px;
+   }
+   
+ .donate-column {
+  @include column(8, true);
+  text-align: center;
+  font-size: 85%; 
+    }
+
+// Calculator page is a 2-column format
+#calculator_content {
+  #calculator_column {
+    @include column(14); }
+  .donate-column {
+    @include column(8, true);
+    text-align: center; } }

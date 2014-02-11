@@ -1,0 +1,514 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-18 18:56+0000\n"
+"PO-Revision-Date: 2010-11-08 05:52-0600\n"
+"Last-Translator: Edit Peronja <edit.peronja@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: fields.py:38
+#, python-format
+msgid "dose %d"
+msgstr "dose %d"
+
+#: forms.py:18
+msgid "Add a new visit to the existing patient?"
+msgstr "Ajouter une nouvelle visite au patient existants?"
+
+#: forms.py:19
+msgid "Add a new patient with a new visit?"
+msgstr "Ajouter un nouveau patient avec une nouvelle visite?"
+
+#: forms.py:28 forms.py:192 templates/patient_in_list.html:12
+#: templates/patient_info.html:7
+msgid "Sex"
+msgstr "Sexe"
+
+#: forms.py:29 forms.py:194
+msgid "Male"
+msgstr "Male"
+
+#: forms.py:30 forms.py:195
+msgid "Female"
+msgstr "Femelle"
+
+#: forms.py:38 templates/patient_in_list.html:10 templates/patient_info.html:8
+msgid "Birth date"
+msgstr "Date de naissance"
+
+#: forms.py:45
+msgid "Patient Name"
+msgstr "Nom du Patient"
+
+#: forms.py:50
+msgid "Residence (Village)"
+msgstr "Residence (Village)"
+
+#: forms.py:52 templates/country_selector.html:5
+#: templates/patient_info.html:10
+msgid "Country"
+msgstr "Pays"
+
+#: forms.py:57 templates/patient_info.html:12
+msgid "Caregiver name"
+msgstr "Nom de l'intervenant"
+
+#: forms.py:67 templates/patient_info.html:26
+msgid "Polio vaccination dates"
+msgstr "Dates de vaccination contre la polio"
+
+#: forms.py:71 templates/patient_info.html:31
+msgid "DTC (diphtheria, tetanus, and whooping cough) vaccination dates"
+msgstr "Dates de vaccination contre diphtérie, Tétanos, Coqueluche (DTC)"
+
+#: forms.py:75 templates/patient_info.html:36
+msgid "Hepatitis B vaccination dates"
+msgstr "Dates de vaccination contre hépatite B"
+
+#: forms.py:79 templates/patient_info.html:41
+msgid "Measles vaccination dates"
+msgstr "Dates de vaccination contre la rougeole"
+
+#: forms.py:83 templates/patient_info.html:46
+msgid "HIB (hemophilus influenzae) vaccination dates"
+msgstr "Dates de vaccination contre haemophilus influenzae (HIB)"
+
+#: forms.py:87 templates/patient_info.html:51
+msgid "BCG (Bacille Calmette-Guérin) vaccination dates"
+msgstr "Dates de vaccination de BCG (Bacille Calmette-Guérin)"
+
+#: forms.py:91 templates/patient_info.html:56
+msgid "Vitamin A vaccination dates"
+msgstr "Dates de vaccination de vitamine A"
+
+#: forms.py:95 templates/patient_info.html:61
+msgid "Deworming (mebendazole) vaccination dates"
+msgstr "Dates de vaccination de mébendazole"
+
+#: forms.py:120
+msgid "Visit date"
+msgstr "Date de la visite"
+
+#: forms.py:126 templates/visit_info.html:10
+#: templates/visit_stat_table.html:19
+msgid "Weight (kg)"
+msgstr "Poids (kg)"
+
+#: forms.py:133
+msgid "Head circumference (cm) (0-24 months only)"
+msgstr "Circonference de la tete (cm) (0-24 mois)"
+
+#: forms.py:140 templates/visit_info.html:21
+#: templates/visit_stat_table.html:20
+msgid "Length or height (cm)"
+msgstr "Longeur ou hauteur (cm)"
+
+#: forms.py:145 templates/visit_info.html:22
+msgid "Height position"
+msgstr "Position en hauteur"
+
+#: forms.py:146
+msgid "Standing"
+msgstr "Debout"
+
+#: forms.py:147
+msgid "Recumbent"
+msgstr "Couché"
+
+#: forms.py:162 templates/visit_info.html:6
+msgid "Evaluator name"
+msgstr "Nom de l'evaluateur"
+
+#: forms.py:177
+msgid "Your Email (optional)"
+msgstr "Votre Email (en option)"
+
+#: forms.py:184
+msgid "Type a message here"
+msgstr "Tapez un message ici"
+
+#: forms.py:191 templates/patient_info.html:6
+msgid "Name"
+msgstr "Nom"
+
+#: forms.py:193 forms.py:200
+msgid "Any"
+msgstr "Tout"
+
+#: forms.py:197
+msgid "Date of birth (YYYY-MM-DD or YYYY-MM or YYYY)"
+msgstr "La Date de Naissance (YYYY-MM-DD ou YYYY-MM ou YYYY)"
+
+#: forms.py:199
+msgid "Worst z-score"
+msgstr "Plus mauvais z-score"
+
+#: forms.py:201
+msgid "below -3"
+msgstr "inférieur à -3"
+
+#: forms.py:202
+msgid "-3 to -2"
+msgstr "-3 À -2"
+
+#: forms.py:203
+msgid "-2 to -1"
+msgstr "-2 À -1"
+
+#: forms.py:204
+msgid "-1 to 0"
+msgstr "-1 À 0"
+
+#: forms.py:205
+msgid "0 to 1"
+msgstr "0 À 1"
+
+#: forms.py:206
+msgid "1 to 2"
+msgstr "1 À 2"
+
+#: forms.py:207
+msgid "2 to 3"
+msgstr "2 À 3"
+
+#: forms.py:211
+msgid "Extended Search (name, residence, birth date, caregiver)"
+msgstr "Recherche Avancee (nom, residence, la date de naissance, intervenant)"
+
+#: forms.py:225
+msgid "Report Type"
+msgstr ""
+
+#: forms.py:227
+msgid "Screening Report"
+msgstr ""
+
+#: forms.py:228
+msgid "Undernutrition Report"
+msgstr ""
+
+#: forms.py:232
+#, fuzzy
+msgid "Visit Date From"
+msgstr "Date de la visite"
+
+#: forms.py:235
+#, fuzzy
+msgid "Visit Date To"
+msgstr "Date de la visite"
+
+#: forms.py:238
+msgid "Show Report Details?"
+msgstr ""
+
+#: models.py:774 templates/visit_info.html:49
+msgid "Visit notes"
+msgstr "Notes visite"
+
+#: widgets.py:67
+#, python-format
+msgid "dose %d:"
+msgstr "dose %d:"
+
+#: templates/_vaccinations.html:8
+#, python-format
+msgid "Dose %(ctr)s"
+msgstr "Dose %(ctr)s"
+
+#: templates/_vaccinations.html:14 templates/_vaccinations.html.py:19
+msgid "No doses"
+msgstr "Aucune dose"
+
+#: templates/calculator.html:7
+msgid "Growth statistics calculator"
+msgstr "Calculateur des statistiques de croissance"
+
+#: templates/calculator.html:20
+msgid "Results"
+msgstr "Résultats"
+
+#: templates/calculator.html:23 templates/visit_info.html:28
+msgid "Age"
+msgstr "Âge"
+
+#: templates/calculator.html:25
+#, python-format
+msgid "%(days)s days"
+msgstr "%(days)s jours"
+
+#: templates/calculator.html:26 templates/visit_info.html:30
+#: templates/visit_stat_table.html:22
+msgid "Body mass index (BMI)"
+msgstr "Indice de mass corporelle (IMC)"
+
+#: templates/calculator.html:48
+msgid "Get Results"
+msgstr "Obtenez les Résultats"
+
+#: templates/country_selector.html:7
+msgid "clear"
+msgstr "Désactivez"
+
+#: templates/country_selector.html:9
+msgid "Restrict to"
+msgstr "Restreindre à"
+
+#: templates/database_index.html:44
+msgid "You must log in to view health information."
+msgstr "Vous devez vous connecter pour afficher des informations de santé"
+
+#: templates/header.html:5
+msgid "Home"
+msgstr "Accueil"
+
+#: templates/header.html:6
+msgid "About"
+msgstr ""
+
+#: templates/header.html:8
+msgid "Contact Us"
+msgstr "Contactez-nous"
+
+#: templates/header.html:15
+msgid "Choose language"
+msgstr "Choisir la langue"
+
+#: templates/header.html:25
+msgid "Sign out"
+msgstr "déconnexion"
+
+#: templates/header.html:27
+#, fuzzy
+msgid "Register"
+msgstr "Intervenant"
+
+#: templates/header.html:30
+msgid "Sign in"
+msgstr "Connexion"
+
+#: templates/patient_in_list.html:14 templates/patient_info.html:9
+msgid "Residence"
+msgstr "Residence"
+
+#: templates/patient_in_list.html:15
+msgid "Caregiver"
+msgstr "Intervenant"
+
+#: templates/patient_in_list.html:23
+msgid "Alert!"
+msgstr "Alerte!"
+
+#: templates/patient_in_list.html:26
+msgid "Add visit"
+msgstr "Ajouter visite"
+
+#: templates/patient_in_list.html:29
+msgid "Latest visit"
+msgstr "Dernière visite"
+
+#: templates/patient_in_list.html:33 templates/visit_info.html:17
+msgid "None"
+msgstr "Aucun"
+
+#: templates/patient_in_list.html:36
+msgid "Age at visit"
+msgstr "Âge au moment de visite"
+
+#: templates/patient_info.html:11
+msgid "Organization"
+msgstr ""
+
+#: templates/patient_info.html:13 templates/visit_info.html:7
+msgid "Created by"
+msgstr "Créé par"
+
+#: templates/patient_info.html:14
+msgid "Created date"
+msgstr "Créé"
+
+#: templates/patient_info.html:18
+msgid "Vaccinations"
+msgstr "Vaccinations"
+
+#: templates/patient_new_with_visit.html:6
+msgid "Add a new patient and visit"
+msgstr "Ajouter un nouveau patient et visite"
+
+#: templates/patient_new_with_visit.html:16
+msgid "Resolve duplicate patient"
+msgstr "Résoudre double patient"
+
+#: templates/patient_new_with_visit.html:18
+msgid "We found a patient with the same name and date of birth."
+msgstr "Nous avons trouvé un patient avec le même nom et date de naissance."
+
+#: templates/patient_new_with_visit.html:23
+#: templates/patient_new_with_visit.html:43
+#: templates/visit_new_or_edit.html:18
+msgid "Submit"
+msgstr "Soumettre"
+
+#: templates/patient_new_with_visit.html:28 templates/patient_view.html:14
+msgid "Patient Information"
+msgstr "Information sur le patient"
+
+#: templates/patient_new_with_visit.html:35
+#: templates/visit_new_or_edit.html:10
+msgid "Visit Information"
+msgstr "Informations sur la visite"
+
+#: templates/patient_new_with_visit_block.html:7
+#: templates/patient_view.html:84
+msgid "Add new patient with a visit"
+msgstr "Ajouter un nouveau patient avec une nouvelle visite"
+
+#: templates/patient_search.html:7
+msgid "OR"
+msgstr "OU"
+
+#: templates/patient_search.html:7
+msgid "browse"
+msgstr "parcourir"
+
+#: templates/patient_search_form.html:15
+msgid "Search"
+msgstr "Recherche"
+
+#: templates/patient_view.html:27
+msgid "Edit Patient Information"
+msgstr "Modifier l'information du patient"
+
+#: templates/patient_view.html:33
+#, fuzzy
+msgid "Delete Patient and Visits"
+msgstr "Ajouter un nouveau patient et visite"
+
+#: templates/patient_view.html:43
+msgid "Visits"
+msgstr "Visites"
+
+#: templates/patient_view.html:54
+#, python-format
+msgid "Edit visit #%(visit_number)s"
+msgstr "Modifier la visite #%(visit_number)s."
+
+#: templates/patient_view.html:58
+#, fuzzy, python-format
+msgid "Delete visit #%(visit_number)s"
+msgstr "Modifier la visite #%(visit_number)s."
+
+#: templates/patient_view.html:68
+msgid "No visits yet."
+msgstr "Pas de visites encore"
+
+#: templates/patient_view.html:78
+msgid "Add new visit"
+msgstr "Ajouter visite"
+
+#: templates/patient_view.html:89
+msgid "No such patient."
+msgstr "Aucun patient tels"
+
+#: templates/reports.html:12
+msgid "Reporting Criteria"
+msgstr ""
+
+#: templates/visit_info.html:5
+#, python-format
+msgid "Visit # %(visit_number)s"
+msgstr "Visite #%(visit_number)s."
+
+#: templates/visit_info.html:9
+msgid "Date"
+msgstr "Date"
+
+#: templates/visit_info.html:13 templates/visit_stat_table.html:21
+msgid "Head circumference (cm)"
+msgstr "Circonference de la tete (cm)"
+
+#: templates/visit_info.html:25
+msgid "Health indicators"
+msgstr "Les indicateurs de santé"
+
+#: templates/visit_info.html:36
+msgid "Couldn't get health indicators."
+msgstr "Impossible d'obtenir les indicateurs de santé"
+
+#: templates/visit_info.html:39
+msgid "Plumpy'nut dosage recommendation"
+msgstr "Recommandation de dosage Plumpy'nut"
+
+#: templates/visit_info.html:41
+msgid "Packets per day"
+msgstr "Paquets par jour"
+
+#: templates/visit_info.html:42
+msgid "Packets per week"
+msgstr "Paquets par semaine"
+
+#: templates/visit_info.html:45
+msgid "For 92g packets containing 500 kcal, average 200 kcal/kg/day."
+msgstr "Pour 92g paquets contenant 500 kcal, en moyenne 200 kcal / kg / jour."
+
+#: templates/visit_info.html:47
+msgid ""
+"This is approximately kg * 200 / 500.0, based on recommendations from page "
+"193 of the Community-based Therapeutic Care (CTC) Field Guide, Annex 20 "
+"Outpatient Therapeutic Programme (OTP) Ready-to-Use Therapeutic Food (RUTF) "
+"Plumpy'nut Ration, produced by the CTC Research and Development program."
+msgstr ""
+"Il s'agit d'environ 200 kg * / 500,0, sur la base des recommandations de la "
+"page193 de la Communauté soins thérapeutiques (CTC) Field Guide, annexe "
+"20Outpatient Therapeutic Programme (OTP) Prêt-à-usage thérapeutique des "
+"aliments (RUTF) Plumpy'nut Ration, produite par la programme de recherche et "
+"développement de la CTC"
+
+#: templates/visit_stat_table.html:7
+msgid "Measured"
+msgstr "Mesurée"
+
+#: templates/visit_stat_table.html:8
+msgid "Percentile"
+msgstr "Percentile"
+
+#: templates/visit_stat_table.html:9
+msgid "Z-score"
+msgstr "Z-score"
+
+#: templates/visit_stat_table.html:23
+msgid "Weight for height"
+msgstr "Longeur ou Hauteur (cm)"
+
+#: templates/years_months_days.html:4
+#, python-format
+msgid "1&nbsp;year"
+msgid_plural "%(years)s&nbsp;years"
+msgstr[0] "1&nbsp;an"
+msgstr[1] "%(years)s&nbsp;ans"
+
+#: templates/years_months_days.html:8
+#, python-format
+msgid "1&nbsp;month"
+msgid_plural "%(months)s&nbsp;months"
+msgstr[0] "1&nbsp;mois"
+msgstr[1] "%(months)s&nbsp;mois"
+
+#: templates/years_months_days.html:13
+#, python-format
+msgid "1&nbsp;day"
+msgid_plural "%(leftover_days)s&nbsp;days"
+msgstr[0] "1&nbsp;jour"
+msgstr[1] "%(leftover_days)s&nbsp;jours"
+
+#~ msgid "Input Data"
+#~ msgstr "Des Données d'entrée"

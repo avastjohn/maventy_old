@@ -1,0 +1,13 @@
+{% load healthdb_tags %}
+
+{% if zandp.is_alertworthy %}
+<span class="errorlist">
+{% endif %}
+
+{% show_percentile zandp %}%
+<br/>
+Z:&nbsp;{% show_zscore zandp %}
+
+{% if zandp.is_alertworthy %}
+</span>
+{% endif %}

@@ -1,0 +1,25 @@
+{% load healthdb_tags %}
+{% load smart_if %}
+
+{% if zandp.percentile_is_nan %}
+
+  {# Complicated because percentile might be NaN if zscore is low enough, yet #}
+  {# we wish to differentiate between below 1st percentile and above 110th    #}
+
+  {% if zandp.zscore_is_nan %}
+    N.A.
+  {% else %}
+    {% smart_if zandp.zscore < 0 %}
+      &lt; 1
+    {% else %}
+      > 99
+    {% endif %}
+  {% endif %}
+
+{% else %}
+
+  {{zandp.percentile|floatformat}}
+
+{% endif %}
+
+%

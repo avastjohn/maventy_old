@@ -1,0 +1,53 @@
+{% load i18n %}
+{% load healthdb_tags %}
+
+<div>
+ <div class="visit_title">{% blocktrans with visit.short_string as visitStr %}Visit {{ visitStr }}{% endblocktrans %}</div>
+ <div>{% trans "Evaluator name" %}: {{visit.evaluator_name}}</div>
+ <div>{% trans "Created by" %}: {{visit.created_by_user.username}}</div>
+ <br/>
+ <div>{% trans "Date" %}: {{visit.visit_date|date}}</div>
+ <div>{% trans "Weight (kg)" %}: {{visit.weight}}</div>
+ 
+ <div>
+   {% trans "Head circumference (cm)" %}:
+   {% if visit.head_circumference %}
+     {{visit.head_circumference}} cm
+   {% else %}
+     {% trans "None" %}
+   {% endif %}
+ </div>
+
+ <div>{% trans "Length or height (cm)" %}: {{visit.height}}</div>
+ <div>{% trans "Height position" %}: {{visit.height_position}}</div>
+ 
+ <br/>
+ <div><b>{% trans "Health indicators" %}</b></div>
+ 
+ {% if visit.get_visit_statistics %}
+   <div>{% trans "Age" %}: {% show_years_months_days visit.get_visit_statistics.age_in_days %}
+                ({{visit.get_visit_statistics.age_in_days}} days)</div>
+   <div>{% trans "Body mass index (BMI)" %}: {{visit.get_visit_statistics.body_mass_index|floatformat}}</div>
+ 
+   <div>
+     {% show_visit_stat_table visit visit.get_visit_statistics %}
+   </div>
+ {% else %}
+   {% trans "Couldn't get health indicators." %}
+ {% endif %}
+ 
+ <div><b>{% trans "Plumpy'nut dosage recommendation" %}</b></div>
+
+ <div>{% trans "Packets per day" %}: <b>{{ visit.plumpynut_ration.daily }}</b></div>
+ <div>{% trans "Packets per week" %}: <b>{{ visit.plumpynut_ration.weekly }}</b></div>
+
+ {# TODO(dan): Move text about Plumpy'nut somewhere central, so it's not repeated once per visit #} 
+ <p>{% trans "For 92g packets containing 500 kcal, average 200 kcal/kg/day." %}</p>
+ 
+ <p>{% trans "This is approximately kg * 200 / 500.0, based on recommendations from page 193 of the Community-based Therapeutic Care (CTC) Field Guide, Annex 20 Outpatient Therapeutic Programme (OTP) Ready-to-Use Therapeutic Food (RUTF) Plumpy'nut Ration, produced by the CTC Research and Development program." %}</p>
+ 
+ <div><b>{% trans "Visit notes" %}</b></div>
+ 
+ {{visit.notes}}
+
+</div>

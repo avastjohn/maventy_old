@@ -1,0 +1,48 @@
+{% load i18n %}
+{% load healthdb_tags %}
+
+<td class="patient-info">
+  <input type="checkbox" name="checked" value="{{ patient.key }}">
+  <a href="{{patient.get_view_url}}">{{patient.name}}</a>
+  (<a href="{{patient.get_edit_url}}">edit</a>)
+  <br/>
+  <table><tbody>
+    <tr><td class="label">{% trans "Birth date" %}</td>      <td>{{ patient.birth_date }}</td></tr>
+    {# TODO(dan): Proper display of patient sex with trans. #}
+    <tr><td class="label">{% trans "Sex" %}</td>       <td>{{ patient.sex }}</td></tr>
+    {# <tr><td class="label">{% trans "Age today" %}</td> <td>TODO</td></tr> #}
+    <tr><td class="label">{% trans "Residence" %}</td> <td>{{ patient.residence }}</td></tr>
+    <tr><td class="label">{% trans "Caregiver" %}</td> <td>{{ patient.caregiver_name }}</td></tr>
+  </tbody></table>
+</td>
+
+<td class="patient-stats">
+  <table><tbody>
+    <tr>
+      <td>{% if patient.get_latest_visit.is_alertworthy %}
+            <span class="errorlist">{% trans "Alert!" %}</span>
+          {% endif %}
+      </td>
+      <td><a href="{{patient.get_new_visit_url}}">{% trans "Add visit" %}</a></td>
+    </tr>
+    <tr>
+      <td class="label">{% trans "Latest visit" %}</td>
+      <td>{% if patient.get_latest_visit.visit_date %}
+            {{ patient.get_latest_visit.visit_date }}
+          {% else %}
+            {% trans "None" %}
+          {% endif %}
+      </td>
+      <td class="label">{% trans "Age at visit" %}</td>
+      <td>
+        {% if patient.get_latest_visit.get_visit_statistics %}
+          {% show_years_months_days patient.get_latest_visit.get_visit_statistics.age_in_days %}
+        {% else %}
+          ?
+        {% endif %}
+      </td>
+    </tr>
+  </tbody></table>
+
+  {% show_visit_stat_table patient.get_latest_visit patient.get_latest_visit.get_visit_statistics %}
+</td>

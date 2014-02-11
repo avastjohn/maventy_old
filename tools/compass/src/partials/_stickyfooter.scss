@@ -1,0 +1,22 @@
+// Mixin for the html element, so the footer stays at the bottom of the screen.
+// Relies on the following html structure, and a fixed-height #footer element:
+//
+//  %body
+//    #root
+//      #root_footer
+//    #footer
+
+@mixin attach_footer($footer_height) {
+  height: 100%;
+  body {
+    height: 100%; }
+  #root {
+    min-height: 100%;
+    margin-bottom: -$footer_height;
+    #root_footer {
+      clear: both;
+      height: $footer_height; } }
+  #footer {
+    clear: both;
+    position: relative;
+    height: $footer_height; } }

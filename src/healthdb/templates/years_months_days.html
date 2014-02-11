@@ -1,0 +1,14 @@
+{% load i18n %}
+
+{% if years %}
+  {% blocktrans count years as years %}1&nbsp;year{% plural %}{{years}}&nbsp;years{% endblocktrans %}
+{% endif %}
+
+{% if months %}
+  {% blocktrans count months as months %}1&nbsp;month{% plural %}{{months}}&nbsp;months{% endblocktrans %}
+{% endif %}
+
+{# If they are >= 1 year old, don't show days anymore #}
+{% if not years and leftover_days %}
+  {% blocktrans count leftover_days as leftover_days %}1&nbsp;day{% plural %}{{leftover_days}}&nbsp;days{% endblocktrans %}
+{% endif %}

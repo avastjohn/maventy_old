@@ -1,0 +1,66 @@
+{% load i18n %}
+{% load healthdb_tags %}
+
+<div class="patient-info-div">
+
+  {% trans "Name" %}: {% trans patient.name %} <br/>
+  {% trans "Sex" %}: {% trans patient.sex %} <br/>
+  {% trans "Birth date" %}: {{ patient.birth_date|date }} <br/>
+  {% trans "Residence" %}: {{patient.residence}} <br/>
+  {% trans "Country" %}: {{patient.country}} <br/>
+  {% trans "Organization" %}: {{patient.organization}} <br/>
+  {% trans "Caregiver name" %}: {{patient.caregiver_name}} <br/>
+  {% trans "Created by" %}: {{patient.created_by_user.username}} <br/>
+  {% trans "Created date" %}: {{patient.created_date|date}}<br/>
+  
+  <br/>
+
+  <h3>{% trans "Vaccinations" %}</h3>
+  
+  <div class="all-vaccinations">
+    {% comment %}
+      TODO(dan): There must be a better way than this cut and paste, but what?
+    {% endcomment %}
+  
+    <div class="vaccination">
+      {% trans "Polio vaccination dates" %}
+      {% show_vaccinations patient.polio_vaccinations %}
+    </div>
+    
+    <div class="vaccination">
+      {% trans "DTC (diphtheria, tetanus, and whooping cough) vaccination dates" %}
+      {% show_vaccinations patient.dtc_vaccinations %}
+    </div>
+    
+    <div class="vaccination">
+      {% trans "Hepatitis B vaccination dates" %}
+      {% show_vaccinations patient.hepb_vaccinations %}
+    </div>
+    
+    <div class="vaccination">
+      {% trans "Measles vaccination dates" %}
+      {% show_vaccinations patient.measles_vaccinations %}
+    </div>
+    
+    <div class="vaccination">
+      {% trans "HIB (hemophilus influenzae) vaccination dates" %}
+      {% show_vaccinations patient.hib_vaccinations %}
+    </div>
+    
+    <div class="vaccination">
+      {% trans "BCG (Bacille Calmette-Guérin) vaccination dates" %}
+      {% show_vaccinations patient.bcg_vaccinations %}
+    </div>
+    
+    <div class="vaccination">
+      {% trans "Vitamin A vaccination dates" %}
+      {% show_vaccinations patient.vita_vaccinations %}
+    </div>
+    
+    <div class="vaccination">
+      {% trans "Deworming (mebendazole) vaccination dates" %}
+      {% show_vaccinations patient.deworming_vaccinations %}
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load healthdb_tags %}
+
+{% block subtitle %}
+  - Visit Information
+{% endblock %}
+
+{% block content %}
+
+  {# TODO(dan): Factor out patient-info #}
+  <fieldset id="patient-info">
+    <legend>Patient Information</legend>
+    {% show_patient_info patient %}
+  </fieldset>
+
+  <br/>
+
+  <form action="{{patient.get_view_url}}"
+    method="get" id="patient-info">
+    <input class="submit" id="formsubmit" type="submit"
+    value="Back to patient information">
+  </form>
+
+  <br/>
+
+  <fieldset id="patient-visit">
+    <legend>Visit Information</legend>
+    {% show_visit_info visit %}
+  </fieldset>
+
+  <br/>
+
+  <form action="{%url healthdb.views.visit_edit orgStr,patient.short_string, visit.short_string %}"
+    method="get" id="edit-visit">
+    <input class="submit" id="formsubmit" type="submit"
+    value="Edit Visit Information">
+  </form>
+
+{% endblock %}

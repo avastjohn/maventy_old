@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load report_tags %}
+
+{% block subtitle %}
+  - Report Criteria
+{% endblock %}
+  
+{% block content %}
+  <form method="POST" action="{% url healthdb.views.reports_view orgStr reportType %}">
+    <div> <p style="text-align: right;"><strong>Set Default Country:</strong>
+    			<br>{% include 'country_selector.html' %}</p>
+    </div>
+    <fieldset>
+	  <legend>{% trans "Reporting Criteria" %}</legend>
+	  <table>
+	    <tr>
+	      <td colspan="2">{{reportsForm.report_type.label}}</td>
+	    </tr>	  
+	    <tr>
+	      <td colspan="2">{{reportsForm.report_type}}</td>
+	    </tr>
+	    <tr>
+	      <td>{{reportsForm.visit_date_from.label}}</td>
+	      <td>{{reportsForm.visit_date_to.label}}</td>
+	    </tr>
+	    <tr>
+	      <td>{{reportsForm.visit_date_from}}</td>
+	      <td>{{reportsForm.visit_date_to}}</td>
+	    </tr>
+	    <tr>
+	      <td colspan=2>{{reportsForm.residence.label}}</td>
+	    </tr>
+	    <tr>
+	      <td colspan=2>{{reportsForm.residence}}</td>
+	    </tr>
+	    <tr>
+	      <td colspan=2>{{reportsForm.show_detail}}{{reportsForm.show_detail.label}}
+	          <i>(besides the summary count you will see a complete list of all undernourished children)</i></td>
+        </tr>	      
+	  </table>
+ 	</fieldset>    	   
+    <input type="submit" name="submitreport" value="Generate Report" />
+  </form>
+
+  {% ifequal reportType 'screening' %}
+    {% show_screening_report report reportData residence showDetail reportDetail %}
+  {% endifequal %}
+
+  {% ifequal reportType 'undernutrition' %}
+    {% show_undernutrition_report report reportData residence showDetail reportStunted reportUnderweight reportWasting %}
+  {% endifequal %}
+
+
+{% endblock %}

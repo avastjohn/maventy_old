@@ -1,0 +1,9 @@
+{% extends 'patient_new_or_edit.html' %}
+
+{% block subtitle %}
+  - Create a new patient
+{% endblock %}
+
+{% block formaction %}{%url healthdb.views.patient_new %}{% endblock %}
+
+{% block formid %}new-form{% endblock %}

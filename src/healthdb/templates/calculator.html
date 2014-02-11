@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load healthdb_tags %}
+
+{% block subtitle %}
+  - {% trans "Growth statistics calculator" %}
+{% endblock %}
+
+{% block content %}
+  <div id="calculator_content">
+
+    <div style="font-size:200%"
+      >Free International Child Growth Calculator Ages 0-5
+    </div>
+    <div style="font-size: 87.5%">(WHO statistics based)</div>
+    <div id="calculator_column">
+      {% if visit_stats %}
+        <fieldset>
+          <legend>{% trans "Results" %}</legend>
+          <ol>
+            {# TODO(dan): Factor out cut-and-paste from visit_info.html #}
+            <p>{% trans "Age" %}:
+               {% show_years_months_days visit_stats.age_in_days %}
+               ({% blocktrans with visit_stats.age_in_days as days %}{{days}} days{% endblocktrans %})</p>
+            <p>{% trans "Body mass index (BMI)" %}:
+               {{visit_stats.body_mass_index|floatformat}}</p>
+  
+            <p>
+              {% show_visit_stat_table visit visit_stats %}
+            </p>
+          </ol>
+        </fieldset>
+      {% endif %}
+    
+      <form action="{% url healthdb.views.calculator %}"
+            method="post" id="calculator">
+      
+        <div>
+          <fieldset>
+            <ol>
+               {{ calculatorform.as_p }}
+            </ol>
+          </fieldset>
+        
+        </div>
+      
+        <input class="submit" id="formsubmit" type="submit" value="{% trans "Get Results" %}">
+      
+      </form>
+    </div>
+  
+    <div class="donate-column">  
+      {% include "_maventy_donate.html" %}
+    </div> 
+
+  </div>
+{% endblock %}

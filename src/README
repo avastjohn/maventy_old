@@ -1,0 +1,110 @@
+
+Notes for running and testing this application
+
+==================================================
+
+Deploying a new version to production:
+
+* svn update and make sure the copy works locally
+
+* Increment the app version in app.yaml
+
+* If you've changed CSS or Javascript, increment the 'cache-busters'
+  in templates/base.html so browsers will fetch the new files:
+   reset.css?NNNN
+   main.css?NNNN
+   mobile.css?NNNN
+   screen.css?NNNN
+   ie.css?NNNN
+   main.jcss?NNNN
+
+
+* Upload the app to childdb.appspot.com:
+  $ python2.5 /usr/local/google_appengine/appcfg.py update src
+
+* Test the version (by visiting "Versions" and clicking on the new version)
+
+* If it works, svn commit. Be sure to have a reasonable commit comment
+
+* Change the default app engine version to the new one in "Versions" screen
+  * Go to the admin screen.
+    https://appengine.google.com/dashboard?&app_id=childdb
+  * Click on "Versions"
+  * To try out your version, click on the link (31 in this case)
+  * To make your version default, click on the appropriate radio button,
+    then "Make Default" button.
+
+* Delete very old versions.  (We're only allowed 10 at once.)
+
+==================================================
+
+Testing:
+
+* To test all django registered applications:
+  * python2.5 manage.py test
+* To test only a single registered application 'healthdb':
+  * python2.5 manage.py test healthdb
+
+==================================================
+
+To create or update international messages for the 'healthdb' app:
+
+cd healthdb
+python2.5 ../manage.py makemessages -l fr
+
+After making all the translations, you need to compile the .po files with
+
+python2.5 ../manage.py compilemessages
+
+See more at http://docs.djangoproject.com/en/1.0/topics/i18n/#message-files
+
+You need xgettext.  For Windows, see
+
+http://docs.djangoproject.com/en/1.0/topics/i18n/#gettext-on-windows
+
+==================================================
+
+To run the recount management script:
+
+$ python2.5 manage.py recount --remote
+
+==================================================
+
+To run a backup via appcfg.py:
+
+$ python2.5 /usr/local/google_appengine/appcfg.py download_data --application=childdb --url=http://childdb.appspot.com/remote-api-34358334 --filename childdb-download
+
+
+To restore a backup from appcfg.py to the local dev instance:
+
+$ python2.5 /usr/local/google_appengine/appcfg.py upload_data --url=http://localhost:8080/remote-api-34358334 --filename childdb-download
+
+You must first create an admin login credential, e.g. by visiting
+localhost:8080/remote-api-34358334 in a browser and logging in with
+admin checked.
+
+==================================================
+
+To recalculate the search index:
+
+$ python2.5 manage.py updatesearchindex --remote --app-id childdb
+
+==================================================
+
+To put a user into a certain organization:
+
+$ python2.5 manage.py setuserorg --app-id childdb --username dfrankow --organization 'maventy' --remote
+
+I get an error "No module named webob" and have to add its path to my
+PYTHONPATH environment variable.  This is probably because
+app-engine-patch is using such old interfaces.  Anyway, do it with
+this on the mac:
+
+export PYTHONPATH=/usr/local/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/lib/webob_0_9/
+
+
+==================================================
+
+To print out all visits:
+
+python2.5 manage.py print_all_visits --org maventy --remote --app-id childdb > all_visits.csv

@@ -1,0 +1,16 @@
+{% load i18n %}
+
+<span class="country-selector">
+  {% if user.default_country %}
+    {% trans "Country" %}:
+    {{user.default_country}}
+    (<a href="{% url healthdb.views.select_country orgStr %}?country=&next={{request.get_full_path|urlencode}}">{% trans "clear" %}</a>)
+  {% else %}  
+    {% trans "Restrict to" %}: 
+    {% for country in countries %}
+      {% ifnotequal country "other" %}
+        <a href="{% url healthdb.views.select_country orgStr %}?country={{country}}&next={{request.get_full_path|urlencode}}">{{country}}</a>
+      {% endifnotequal %}
+    {% endfor %}
+  {% endif %}
+</span>

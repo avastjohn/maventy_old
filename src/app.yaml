@@ -1,0 +1,38 @@
+application: childdb
+version: 54
+runtime: python
+api_version: 1
+
+default_expiration: '7d'
+
+handlers:
+# Avoid errors for requests for /favicon.ico/ (note trailing slash)
+- url: /favicon\.ico.*
+  static_files: static/img/favicon.ico
+  upload: static/img/favicon.ico
+
+# TODO(dan): Should possibly use remote_api handler
+# See http://code.google.com/appengine/docs/python/config/appconfig.html#Builtin_Handlers
+- url: /remote-api-34358334
+  script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
+  secure: optional
+  login: admin
+
+- url: /static
+  static_dir: static
+  secure: optional
+
+- url: /.*
+  # script: common/appenginepatch/main.py
+  script: main.py
+  secure: optional
+
+# http://code.google.com/appengine/docs/python/config appconfig.html#Builtin_Handlers
+#builtins:
+# Turn on datastore_admin using the admin UI instead of in app.yaml.
+#- datastore_admin: on
+#- appstats: on
+
+# http://code.google.com/appengine/docs/python/config/appconfig.html#Inbound_Services
+inbound_services:
+- warmup

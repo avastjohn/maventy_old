@@ -1,0 +1,13 @@
+{% load i18n %}
+{% load healthdb_tags %}
+
+{% if stat.is_alertworthy %}
+  <tr class="alert"><td>
+{% else %}
+  <tr><td class="label">
+{% endif %}
+          {% trans stat_name %}</td>
+      <td>{{ measured|floatformat:1 }}</td>
+      <td>{% show_percentile stat %}</td>
+      <td>{{ stat.zscore|floatformat:1 }}</td>
+  </tr>

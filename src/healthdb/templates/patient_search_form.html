@@ -1,0 +1,15 @@
+{% load i18n %}
+
+{# TODO(dan): Move this width:auto into a class when Compass is fixed #}
+<table style="width: auto">
+  <tbody class="search-form">
+{% for field in search_form %}
+  <tr>
+    <td>{{ field.label_tag }}</td>
+    <td>{{ field }}</td>
+  </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+<div><input type="submit" value="{% trans 'Search' %}" /></div>

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  500 - Internal Server Error
+{% endblock %}
+
+{% block content %}
+  <p class="errorlist">Internal server error.</p>
+
+  <p>You have done nothing wrong.
+  The code gnomes have misbehaved.  Please let us know.</p>
+
+  {# and we're going to look into it right away...  #}
+  {# TODO(dan): Email and/or log every 500 error      #}
+{% endblock %}

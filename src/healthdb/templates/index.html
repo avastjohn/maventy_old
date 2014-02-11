@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load healthdb_tags %}
+
+{% block content %}
+  <div class="highlight-column">
+    <div class="highlightbox" id="blue">
+        <h4>Pour tout le monde</h4>
+        <p>  <a href="{%url healthdb.views.calculator %}"
+          >Calcul gratuit international de la croissance de l'enfant </a> </p>
+    </div>
+    <div class="highlightbox" id="blue">
+        <h4>Pour les organisations</h4>
+        <p>  <a href="{% url healthdb.views.database_index %}"
+          >Le suivi gratuit de la base de données de la malnutrition de l’enfant</a> </p>
+    </div>
+  </div>
+  
+  <div class="highlight-column">
+    <div class="highlightbox" id="yellow">
+        <h4>For everyone</h4>
+        <p>  <a href="{%url healthdb.views.calculator %}"
+          >Free International Child Growth Calculator </a> </p>
+    </div>
+    <div class="highlightbox" id="yellow">
+        <h4>For organizations</h4>
+        <p>  <a href="{% url healthdb.views.database_index %}"
+          >Free Child Malnutrition Tracking Database</a> </p>
+    </div>
+  </div>
+   
+  <div class="donate-column">  
+      {% include "_maventy_donate.html" %}
+  </div> 
+  
+  <div class="description-column">
+    <br />
+    <p>Maventy's malnutrition software provides z-scores and percentiles for
+       basic anthropometric measures such as weight, height, head circumference 
+       and weight for height, based on a child's vital statistics. The results are
+       calibrated against World Health Organization (WHO) standards.
+    </p>
+    <p>The complete application includes
+       <ul>
+        <li>Data storage, History view, and Search</li>
+        <li>24x7 Secured Access from anywhere</li>
+        <li>Analytical Reports</li>
+        <li>Nutrition Recommendation</li>
+       </ul>
+       ... and other features. <br/><br/>
+     </p>
+  </div>
+{% endblock %}

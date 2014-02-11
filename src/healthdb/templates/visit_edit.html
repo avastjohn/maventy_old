@@ -1,0 +1,9 @@
+{% extends 'visit_new_or_edit.html' %}
+
+{% block subtitle %}
+  - Edit a visit
+{% endblock %}
+
+{% block formaction %}{{visit.get_edit_url}}{% endblock %}
+
+{% block formid %}edit-form{% endblock %}

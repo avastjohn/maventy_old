@@ -1,0 +1,69 @@
+h1, h2, h3 { color: #2c5264; }
+
+div.spacer { height: 30px; }
+
+#header #previewlink { color: #ec0e0e; font-size: 100%; float: left; padding-top: 18px; }
+
+#subheader { color: white; margin-left: 20%; font-size: 140%; clear: both; }
+#subheader span { background-color: #5e94c3; }
+#subheader a { text-decoration: none; }
+
+#main { padding-bottom: 150px; }
+#main #previewheader { color: #ec0e0e; }
+#main #previewtext { color: #ec0e0e; }
+
+#footer { background-color: #1f1f1f; color: #959595; }
+#footer .container { padding-top: 14px; }
+#footer a { color: white; }
+
+form .defaultText { width: 500px; font-size: 1.3em; }
+form .defaultTextActive { color: #a1a1a1; font-style: italic; }
+form textarea.defaultText { height: 80px; }
+
+.notice { border: 1px solid #bfbab0; background-color: #e1edfa; padding: 5px; margin-bottom: 10px; }
+
+.highlightbox { background-color: #e1edfa; border: 3px solid #accff6; display: inline-block; margin-bottom: 20px; padding: 10px; width: auto; text-align: center; }
+.highlightbox a { font-size: 1.8em; font-weight: bold; color: green; }
+
+.buttonlist ul { padding-top: 10px; }
+.buttonlist li { display: inline; list-style-type: none; padding-right: 10px; }
+
+.errorlist { color: #ec0e0e; }
+
+.alert { color: #ec0e0e; }
+
+.emphasis { color: black; font-weight: bold; }
+
+.attribution { font-size: 80%; }
+
+ol { margin: 0 2em 1.5em; }
+
+.health-indicators { width: 90%; }
+.health-indicators .col-header { padding: 0; margin: 0; align: left; }
+.health-indicators .label-col { padding: 0; margin: 0; align: left; }
+.health-indicators .value-col { align: left; padding: 0; }
+
+fieldset#patient-info { vertical-align: top; }
+fieldset#patient-info div.patient-info-div { margin: 10px 20px 20px 40px; }
+
+table.patients { border: 1px solid #bfbab0; }
+table.patients tr.odd { background-color: #eff6fe; }
+table.patients th { font-weight: normal; color: gray; }
+table.patients td.label { color: gray; }
+
+.page-nav { padding: 5px; }
+
+div.search-form-container { padding-bottom: 10px; }
+
+div.search-form { display: inline; }
+
+form.search-form { display: inline; }
+
+div.all-vaccinations div.vaccination div.vaccination-dates { margin-left: 20px; margin-bottom: 10px; }
+
+.highlight-column .highlightbox { margin-bottom: 20px; padding: 10px; height: 140px; text-align: left; }
+.highlight-column .highlightbox a { font-size: 1.2em; font-weight: bold; color: #1f1f1f; }
+
+.highlightbox#yellow { background-color: #f8bb51; border-color: #f3e4a5; border-style: solid solid solid none; -moz-border-radius: 0 10px 10px 0; border-radius: 0 10px 10px 0; }
+
+.highlightbox#blue { background-color: #94c0dc; border-color: #b0d9f3; margin-right: -18px; -moz-border-radius: 10px; border-radius: 10px; }

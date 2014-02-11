@@ -1,0 +1,7 @@
+{% load healthdb_tags %}
+
+{% if zandp.zscore_is_nan %}
+  N.A.
+{% else %}
+  {{zandp.zscore|floatformat:2}}
+{% endif %}

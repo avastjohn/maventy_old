@@ -1,0 +1,9 @@
+{% extends 'visit_new_or_edit.html' %}
+
+{% block subtitle %}
+  - Create a new visit
+{% endblock %}
+
+{% block formaction %}{%url healthdb.views.visit_new orgStr, patient.short_string %}{% endblock %}
+
+{% block formid %}new-form{% endblock %}

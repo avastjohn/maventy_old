@@ -1,0 +1,170 @@
+@import "partials/base";
+
+// Definitions in common between web browser (screen.scss)
+// and mobile browser (mobile.scss)
+
+h1, h2, h3 {
+  color: $headings_font_color; }
+
+div.spacer {
+  height: 30px; }
+
+#header {
+  #previewlink {
+    color: $preview_link_color;
+    font-size: 100%;
+    float: left;
+    padding-top: 18px;
+  }
+}
+
+#subheader {
+  color: white;
+  margin-left: 20%;
+  font-size: 140%;
+  clear: both;
+  span {
+    background-color: #5e94c3; }
+  a {
+    text-decoration: none; } }
+
+#main {
+  padding-bottom: $footer_height + 30px;
+  #previewheader {
+    color: $preview_link_color; }
+  #previewtext {
+    color: $preview_link_color; } }
+
+#footer {
+  background-color: $footer_bgcolor;
+  color: $footer_font_color;
+  .container {
+    padding-top: 14px; }
+  a {
+    color: $footer_link_color; } }
+
+form {
+  .defaultText {
+    width: $input_width;
+    font-size: 1.3em; }
+  .defaultTextActive {
+    color: $input_help_font_color;
+    font-style: italic; }
+  textarea.defaultText {
+    height: $textarea_height; } }
+
+.notice {
+  border: $muted_border;
+  background-color: $notice_bgcolor;
+  padding: 5px;
+  margin-bottom: 10px; }
+
+.highlightbox {
+  background-color: $highlight_bgcolor;
+  border: $highlight_border;
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: auto;
+  text-align: center;
+  a {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: $highlight_link_color; } }
+
+.buttonlist {
+  ul {
+    padding-top: 10px; }
+  li {
+    display: inline;
+    list-style-type: none;
+    padding-right: 10px; } }
+
+.errorlist {
+  color: $error_color; }
+
+.alert {
+  color: $error_color; }
+
+.emphasis {
+  color: $emphasis_font_color;
+  font-weight: bold; }
+
+.attribution {
+  font-size: 80%; }
+
+ol {
+  margin: 0 2em 1.5em; }
+
+.health-indicators {
+  width: 90%;
+  .col-header {
+    padding: 0;
+    margin: 0;
+    align: left; }
+  .label-col {
+    padding: 0;
+    margin: 0;
+    align: left; }
+  .value-col {
+    align: left;
+    padding: 0; } }
+
+fieldset#patient-info {
+  vertical-align: top;
+  div.patient-info-div {
+    margin: 10px 20px 20px 40px; } }
+
+table.patients {
+  border: $muted_border;
+  tr.odd {
+    background-color: #eff6fe; }
+  th {
+    font-weight: normal;
+    color: $muted_font_color; }
+  td.label {
+    color: $muted_font_color; } }
+
+.page-nav {
+  padding: 5px; }
+
+div.search-form-container {
+  padding-bottom: 10px; }
+
+div.search-form {
+  display: inline; }
+
+form.search-form {
+  display: inline; }
+
+div.all-vaccinations {
+  div.vaccination {
+    div.vaccination-dates {
+      margin-left: 20px;
+      margin-bottom: 10px; } } }
+
+.highlight-column .highlightbox {
+  margin-bottom: 20px;
+  padding: 10px; 
+  height: 140px;
+  text-align: left;
+   a {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: $footer_bgcolor; }}
+
+.highlightbox#yellow {
+  background-color: $highlight_yellow;
+  border-color: $highlight_yellow_border_color;
+  border-style: solid solid solid none;
+  // rounded corners
+  -moz-border-radius: 0 10px 10px 0;
+  border-radius: 0 10px 10px 0; }
+  
+.highlightbox#blue {
+  background-color: $highlight_blue;
+  border-color: $highlight_blue_border_color;   
+  margin-right:-18px;
+  // rounded corners
+  -moz-border-radius: 10px;
+  border-radius: 10px; }
